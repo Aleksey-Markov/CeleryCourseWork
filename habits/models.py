@@ -9,7 +9,7 @@ class Habit(models.Model):
     place = models.CharField(max_length=200, verbose_name='место')
     time = models.DateTimeField(verbose_name='время')
     action = models.CharField(max_length=400, verbose_name='действие')
-    is_enjoyable = models.BooleanField(default= False, verbose_name='признак приятности')
+    is_enjoyable = models.BooleanField(default=False, verbose_name='признак приятности')
     related_habit = models.ForeignKey('self', on_delete=models.CASCADE, verbose_name='связанная привычка', **NULLABLE)
     periodicity = models.IntegerField(default=1, verbose_name='периодичность')
     reward = models.CharField(max_length=400, verbose_name='вознаграждение', **NULLABLE)
