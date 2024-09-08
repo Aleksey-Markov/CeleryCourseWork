@@ -177,9 +177,11 @@ CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 
-# CELERY_BEAT_SCHEDULE = {
-#     "send_information": {
-#         "task": "habits.tasks.telegram_notification",
-#         "schedule": timedelta(minutes=5),
-#     },
-# }
+CELERY_BEAT_SCHEDULE = {
+    "send_information": {
+        "task": "habits.tasks.go_habit",
+        "schedule": timedelta(days=1),
+    },
+}
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
