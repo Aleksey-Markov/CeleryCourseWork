@@ -4,4 +4,4 @@ from habits.models import Habit
 
 @admin.register(Habit)
 class HabitAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'action', 'is_public')
+    list_display = ("id", "user", "action", "is_public")
