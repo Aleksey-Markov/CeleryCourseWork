@@ -15,13 +15,10 @@ schema_view = get_schema_view(
         terms_of_service="https://example.com/terms/",
         contact=openapi.Contact(name="API Support", email="support@example.com"),
         license=openapi.License(name="BSD License"),
-        external_docs=openapi.ExternalDocumentation(
-            url="https://swagger.io/docs/open-api/introduction/",
-            description="Find more info here",
-        ),
+    ),
         public=True,
         permission_classes=(permissions.AllowAny,),
-    ))
+    )
 
 
 urlpatterns = [
