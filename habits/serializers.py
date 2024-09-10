@@ -18,6 +18,4 @@ class HabitSerializer(serializers.ModelSerializer):
             HabitRelatedValidator(val="related_habit"),
             DurationValidator(val="time_to_complete"),
             EnjoyHabitValidator(val="is_enjoyable"),
-            PeriodicityValidator(val1="frequency_number",
-                                 val2="frequency_unit"),
         ]

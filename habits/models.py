@@ -8,7 +8,8 @@ class Habit(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        verbose_name="пользователь"
+        verbose_name="пользователь",
+        **NULLABLE
     )
     place = models.CharField(max_length=200, verbose_name="место")
     time = models.DateTimeField(verbose_name="время")

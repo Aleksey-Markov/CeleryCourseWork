@@ -92,6 +92,8 @@ DATABASES = {
         "NAME": os.getenv("DB_NAME"),
         "USER": os.getenv("DB_USER"),
         "PASSWORD": os.getenv("DB_PASSWORD"),
+        "HOST": os.getenv("DB_HOST"),
+        "PORT": os.getenv("DB_PORT"),
     }
 }
 
@@ -156,14 +158,14 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
+    os.environ.get("CORS_ALLOWED_ORIGINS"),
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://read-and-write.example.com",
-    "http://localhost:8000",
+    os.environ.get("CSRF_TRUSTED_ORIGINS"),
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = os.environ.get("CORS_ALLOW_ALL_ORIGINS") if os.getenv("CORS_ALLOW_ALL_ORIGINS") else False
+
 
 CELERY_TIMEZONE = TIME_ZONE
 CELERY_TASK_TRACK_STARTED = True
