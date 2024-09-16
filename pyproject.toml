@@ -21,6 +21,7 @@ django-celery-beat = "^2.7.0"
 setuptools = "^74.1.2"
 django-cors-headers = "^4.4.0"
 black = "^24.8.0"
+docker = "^7.1.0"
 
 
 [build-system]
